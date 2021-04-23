@@ -1,0 +1,122 @@
+
+body{
+  font-family: sans-serif;
+  background-color: #C1C1C1;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+#wrapper{
+	text-align: center;
+	background-color: #32CD32;
+}
+#wrapper h1{
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-left: 30px;
+  margin-bottom: 0;
+  font-size: 50px;
+  color: #D3D3D3;
+  text-align: left;
+}
+#login{
+  font-size: 15px;
+  text-align: right;
+}
+#login fieldset{
+  background-color: yellow;
+  margin-right: 0px;
+}
+#greeting{
+  font-size: 15px;
+  margin: 8px;
+}
+#friendList{
+  height:1000pxs;
+  width: 20%;
+  background-color: #D3D3D3;
+  float: left;
+  text-align: left;
+}
+
+.selected{
+  background-color: yellow;
+}
+
+#friendList tbody tr:hover{
+  background-color: yellow;
+}
+
+#photoList{
+  font-size: 7px;
+  height:1000px;
+  width: 80%;
+  background-color: white;
+  float: left;
+}
+#photoInfo{
+  font-size: 7px;
+  height:350px;
+  width: 80%;
+  background-color: white;
+  float: left;
+}
+#photoInfo #closeBut {
+  float: right;
+}
+#photoInfo #img {
+  margin-top:20px;
+  margin-bottom: 20px;
+  width:250px;
+  height:250px;
+  align: center;
+}
+#photoInfo a{
+  float:center;
+  padding-right: 20px;
+  font-size: 13px;
+}
+
+#loggedin button{
+  background-color: #32CD32;
+  color: #D3D3D3;
+  font-size: 18px;
+  position: relative;
+  float: right;
+}
+#choose{
+    width: 70%;
+    height: 30px;
+	  background-color: #32CD32;
+    float: right;
+    padding-top:7px;
+    margin-top: 20px;
+}
+
+#pic{
+  width:100px;
+  height:140px;
+  overflow: hidden;
+}
+#pic a{
+  margin-left: 4px;
+  float:left;
+  width:50%;
+}
+#pic #deleteBut{
+  font-size: 7px;
+  float: right;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+#pic #likeBut{
+  font-size: 7px;
+  float: right;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+#photoList #img{
+  width:100px;
+  height:100px;
+}

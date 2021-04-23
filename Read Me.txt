@@ -1,0 +1,73 @@
+Welcome to My Album created by Minwoo Lee (3035240415)
+Here I am going to introduce my method of displaying my iAlbum for this project.
+---------------------------------------------------------------------------------------------------------------------------------
+
+There are four sections
+
+1. Album (defualt page) --> username and password
+2. FriendList (on the left)
+	a. FriedRow --> mapping each friend
+3. PhotoList (on the right)
+	a. AlbumRow --> mapping each photo
+4. PhotoInfo (on the right, hidden at first)
+
+----------------------------------------------------------------------------------------------------------------
+
+Proces:
+First it loads checkCookie() by the following
+	componentDidMount() {
+  this.checkCookie();
+}
+it checks the cookies and automatically logins in if there is a cookie.
+
+After logged in you can select the album on the left. Each friend's album is listed through MAP
+
+If you click the album, the background of the selected becomes yellow
+I added class "selected" and "unselected" so that I can change the background color of selected in css ( .selected)
+
+After selecting the album, each photo is again listed through MAP
+
+when you click delete, the files with send delete request and delete the file using fs.unlink.
+the path during fs.unlink is found and fixed using substring method
+
+when you click like, the likedby field is updated. By using document.querySelectorAll, all the likedby fields are updated 
+so that when you open the image, the buttons works the same. 
+
+when you upload the photo, it checks whether the photo is selected and perform if selected 
+I used xhr due to the format of the uploaded file, refreshes the album page if succesful
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Here are the explanations of each function in App.js
+
+componentDidMount()  --> functions need to be loaded immediately
+
+checkCookie() --> calls /init and checks cookie
+
+loggedin/loggedout --> display page format when loggedin or loggedout
+
+handleID/PW --> stores the value of username and password that the user typed in
+
+login --> calls /login using the username and password in state , and create cookie
+
+logout --> calls /logout, and delete cookie
+
+getMyAlbum --> calls /getalbum/0, and display the photos in the user's album (delete buttons are shown) & My Album highlighted
+
+getAlbum --> calls /getalbum/userid, and display photos of user's frind (like buttons and likedby shown) & friend's album highlighted
+
+upload --> upload pic if selected (calls the file by file=$('#choosepic')[0].files[0];), and display the album page when successful
+
+delete(id) --> delete the pic using photoid, and display the album page when succssful
+
+like (id) --> update likedby using photoid, and the content of all the corresponding likedby updated immediately
+
+likedby(id, data) --> function for correctly displaying the likedby array (display nothing if nobody liked)
+
+enlarge(photo) --> displays the bigger version of the pic selected, and other pics hidden (photolist page is displayed none, and photoInfo page is shown)
+
+close(id) --> when the picture is displayed in bigger version, it closes, and goes back to album page (photoInfo page is displayed none, and photolist page is shown)
+
+
+
